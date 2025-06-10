@@ -16,6 +16,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { DeleteModal } from "@/components/ui/delete-modal";
+import Header from "@/components/ui/Header";
 
 const statusColumns = [
 	{ key: "To Do", title: "To Do", color: "border-gray-200" },
@@ -78,14 +79,12 @@ export function TaskBoard() {
 
 	return (
 		<div className="">
-			{/* header - iska component banana hai baad mei */}
+			{/* header */}
 			<div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-				<div>
-					<h1 className="text-3xl font-bold">Task Board</h1>
-					<p className="text-muted-foreground">
-						Manage your tasks with this Kanban-style board
-					</p>
-				</div>
+				<Header
+					title="Task Board"
+					subtitle="Manage your tasks with this Kanban board"
+				/>
 
 				<Button
 					onClick={() => setIsCreateFormOpen(true)}
@@ -97,7 +96,7 @@ export function TaskBoard() {
 			</div>
 
 			{/* filters */}
-			<div className="flex flex-col md:flex-row my-12 items-start lg:items-center justify-between gap-6 lg:gap-0">
+			<div className="flex flex-col md:flex-row md:my-12 mb-6 items-start lg:items-center justify-between gap-6 lg:gap-0">
 				{/* div for search and assignee */}
 				<div className="flex flex-col md:flex-row lg:flex-row items-start md:items-end lg:items-end gap-4 w-full lg:w-auto">
 					<div className="flex flex-col gap-2 w-full md:w-auto">

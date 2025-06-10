@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
 	{ name: "Tasks", href: "/", icon: Kanban },
-	// { name: "Recipes", href: "/recipes", icon: ChefHat },
+	{ name: "Recipes", href: "/recipes", icon: ChefHat },
 ];
 
 export function Navigation() {
@@ -18,13 +18,13 @@ export function Navigation() {
 			<div className="container mx-auto px-4">
 				<div className="flex h-16 items-center justify-between">
 					<div className="flex items-center gap-8">
-						<Link
+						{/* <Link
 							href="/"
 							className="flex items-center gap-2 font-bold text-xl"
 						>
 							<Kanban className="h-6 w-6" />
 							TaskManager
-						</Link>
+						</Link> */}
 
 						<nav className="flex items-center gap-6">
 							{navigation.map((item) => {

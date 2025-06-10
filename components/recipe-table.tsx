@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 
 import SimpleTable from "@/components/ui/SimpleTable";
 import { RecipeModal } from "@/components/ui/RecipeModal";
+import Header from "@/components/ui/Header";
 
 export function RecipeTable() {
 	const [search, setSearch] = useState("");
@@ -41,16 +42,10 @@ export function RecipeTable() {
 		<div className="space-y-6">
 			{/* header */}
 			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-				<div>
-					<h1 className="text-3xl font-bold flex items-center gap-2">
-						<ChefHat className="h-8 w-8" />
-						Recipe Browser
-					</h1>
-					<p className="text-muted-foreground">
-						Search and explore delicious recipes from around the
-						world
-					</p>
-				</div>
+				<Header
+					title="Recipe Browser"
+					subtitle="Search and explore delicious recipes from around the world"
+				/>
 			</div>
 
 			{/* search */}
