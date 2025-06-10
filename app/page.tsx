@@ -1,4 +1,4 @@
-import { TaskBoard } from "@/components/task-board";
+import { TaskBoard } from "@/components/TaskBoard";
 
 export default function TasksPage() {
 	return <TaskBoard />;
