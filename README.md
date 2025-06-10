@@ -1,4 +1,4 @@
-## 🛠 Tech Stack
+## Tech Stack
 
 -   **Framework**: Next.js 14 with App Router
 -   **Language**: TypeScript
@@ -9,37 +9,35 @@
 -   **Icons**: Lucide React
 -   **Date Handling**: date-fns
 
-## 📁 Project Structure
+## Folder Structure
 
 ```
-├── app/                    # Next.js App Router pages
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
+├── app/                  # Next.js App Router pages
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
 │   ├── page.tsx          # Tasks page (home)
 │   ├── providers.tsx     # Global providers
 │   └── recipes/          # Recipe pages
 ├── components/           # React components
-│   ├── ui/              # Shadcn UI base components
-│   ├── navigation.tsx   # Main navigation
-│   ├── recipe-table.tsx # Recipe browser
-│   ├── task-board.tsx   # Kanban board
-│   ├── task-card.tsx    # Individual task cards
-│   └── task-form.tsx    # Task creation/editing form
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
-├── store/               # Zustand stores
-└── types/               # TypeScript interfaces
+│   ├── ui/               # Shadcn UI base components
+│   ├── navigation.tsx    # Main navigation
+│   ├── recipe-table.tsx  # Recipe browser
+│   ├── task-board.tsx    # Kanban board
+│   ├── task-card.tsx     # Individual task cards
+│   └── task-form.tsx     # Task creation/editing form
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions
+├── store/                # Zustand stores
+└── types/                # TypeScript interfaces
 ```
 
-## 🚀 Getting Started
-
-### Installation
+## To run locally
 
 1. **Clone the repo**
 
     ```bash
     git clone <repository-url>
-    cd collaborative-task-manager
+    cd conexus-task
     ```
 
 2. **Install dependencies**
