@@ -79,7 +79,7 @@ export function TaskBoard() {
 	return (
 		<div className="">
 			{/* header - iska component banana hai baad mei */}
-			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+			<div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
 				<div>
 					<h1 className="text-3xl font-bold">Task Board</h1>
 					<p className="text-muted-foreground">
@@ -97,22 +97,22 @@ export function TaskBoard() {
 			</div>
 
 			{/* filters */}
-			<div className="flex my-12 items-center justify-between">
+			<div className="flex flex-col md:flex-row my-12 items-start lg:items-center justify-between gap-6 lg:gap-0">
 				{/* div for search and assignee */}
-				<div className="flex items-end gap-4">
-					<div className="flex flex-col gap-2">
-						<label className="text-sm font-medium invisible">
+				<div className="flex flex-col md:flex-row lg:flex-row items-start md:items-end lg:items-end gap-4 w-full lg:w-auto">
+					<div className="flex flex-col gap-2 w-full md:w-auto">
+						<label className="text-xs md:text-sm font-medium invisible">
 							Search Tasks
 						</label>
 						<div className="relative">
-							<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+							<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-3 w-3 md:h-4 md:w-4 text-muted-foreground" />
 							<Input
 								placeholder="Search by title.."
 								value={filters.search || ""}
 								onChange={(e) =>
 									handleSearchChange(e.target.value)
 								}
-								className="pl-10 w-64"
+								className="pl-8 md:pl-10 w-full md:w-48 lg:w-64 text-sm md:text-base"
 							/>
 						</div>
 						{filters.search && filters.search.trim() !== "" && (
@@ -122,13 +122,15 @@ export function TaskBoard() {
 							</p>
 						)}
 					</div>
-					<div className="flex flex-col gap-2">
-						<label className="text-sm font-medium">Assignee</label>
+					<div className="flex flex-col gap-2 w-full md:w-auto">
+						<label className="text-xs md:text-sm font-medium">
+							Assignee
+						</label>
 						<Select
 							value={filters.assignee || "All"}
 							onValueChange={handleAssigneeChange}
 						>
-							<SelectTrigger className="w-48">
+							<SelectTrigger className="w-full md:w-40 lg:w-48 text-sm md:text-base">
 								<SelectValue />
 							</SelectTrigger>
 							<SelectContent>
@@ -146,10 +148,10 @@ export function TaskBoard() {
 				</div>
 
 				{/* other filters */}
-				<div>
-					<div className="flex flex-wrap gap-4">
-						<div className="flex flex-col gap-2">
-							<label className="text-sm font-medium">
+				<div className="w-full lg:w-auto">
+					<div className="flex flex-col md:flex-row flex-wrap gap-4">
+						<div className="flex flex-col gap-2 w-full md:w-auto">
+							<label className="text-xs md:text-sm font-medium">
 								Priority
 							</label>
 							<Select
@@ -163,7 +165,7 @@ export function TaskBoard() {
 									})
 								}
 							>
-								<SelectTrigger className="w-32">
+								<SelectTrigger className="w-full md:w-28 lg:w-32 text-sm md:text-base">
 									<SelectValue />
 								</SelectTrigger>
 								<SelectContent>
@@ -177,8 +179,8 @@ export function TaskBoard() {
 							</Select>
 						</div>
 
-						<div className="flex flex-col gap-2">
-							<label className="text-sm font-medium">
+						<div className="flex flex-col gap-2 w-full md:w-auto">
+							<label className="text-xs md:text-sm font-medium">
 								Sort By
 							</label>
 							<Select
@@ -187,7 +189,7 @@ export function TaskBoard() {
 									setFilters({ sortBy: value as any })
 								}
 							>
-								<SelectTrigger className="w-36">
+								<SelectTrigger className="w-full md:w-32 lg:w-36 text-sm md:text-base">
 									<SelectValue />
 								</SelectTrigger>
 								<SelectContent>
@@ -204,15 +206,17 @@ export function TaskBoard() {
 							</Select>
 						</div>
 
-						<div className="flex flex-col gap-2">
-							<label className="text-sm font-medium">Order</label>
+						<div className="flex flex-col gap-2 w-full md:w-auto">
+							<label className="text-xs md:text-sm font-medium">
+								Order
+							</label>
 							<Select
 								value={filters.sortOrder || "desc"}
 								onValueChange={(value) =>
 									setFilters({ sortOrder: value as any })
 								}
 							>
-								<SelectTrigger className="w-24">
+								<SelectTrigger className="w-full md:w-20 lg:w-24 text-sm md:text-base">
 									<SelectValue />
 								</SelectTrigger>
 								<SelectContent>
@@ -226,7 +230,7 @@ export function TaskBoard() {
 			</div>
 
 			{/* main board UI */}
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{statusColumns.map((column) => {
 					const columnTasks = getTasksByStatus(column.key);
 

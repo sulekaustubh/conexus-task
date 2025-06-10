@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
 	{ name: "Tasks", href: "/", icon: Kanban },
-	{ name: "Recipes", href: "/recipes", icon: ChefHat },
+	// { name: "Recipes", href: "/recipes", icon: ChefHat },
 ];
 
 export function Navigation() {
