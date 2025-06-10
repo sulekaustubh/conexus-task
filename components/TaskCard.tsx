@@ -56,7 +56,7 @@ export function TaskCard({
 			<div className="cursor-pointer border rounded-md hover:shadow-md transition-shadow bg-white p-4">
 				<div className="pb-3">
 					<div className="flex items-start justify-between">
-						<h3 className="font-semibold text-lg line-clamp-2">
+						<h3 className="font-semibold text-sm sm:text-base md:text-lg line-clamp-2">
 							{task.title}
 						</h3>
 						<div className="flex gap-x-1">
@@ -82,7 +82,7 @@ export function TaskCard({
 					</div>
 
 					{task.description && (
-						<p className="text-sm text-muted-foreground line-clamp-2 mt-2">
+						<p className="text-xs sm:text-sm md:text-base text-muted-foreground line-clamp-2 mt-2">
 							{task.description}
 						</p>
 					)}

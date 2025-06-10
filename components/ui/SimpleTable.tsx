@@ -27,13 +27,13 @@ const SimpleTable = <T,>({
 
 	return (
 		<div className="overflow-x-auto">
-			<table className="w-full text-sm">
+			<table className="w-full text-xs sm:text-base md:text-lg">
 				<thead>
 					<tr className="border-b">
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className="h-12 px-4 text-left align-middle font-medium text-gray-600"
+								className="h-12 px-2 text-left  align-middle font-medium text-gray-600"
 							>
 								{column.header}
 							</th>
@@ -49,7 +49,7 @@ const SimpleTable = <T,>({
 							{columns.map((column, colIndex) => (
 								<td
 									key={colIndex}
-									className="p-4 align-middle"
+									className="p-2 align-middle"
 								>
 									{column.render
 										? column.render(row, rowIndex)

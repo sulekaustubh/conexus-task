@@ -236,7 +236,7 @@ export function TaskBoard() {
 					return (
 						<div
 							key={column.key}
-							className={`${column.color} border p-2 rounded-md border-t-4`}
+							className={`${column.color} border p-0 sm:p-2 rounded-md border-t-4`}
 						>
 							<div className="flex items-center mx-4 my-2 justify-between">
 								<span className="text-xl font-semibold">
@@ -247,7 +247,7 @@ export function TaskBoard() {
 								</span>
 							</div>
 
-							<div className="space-y-3 p-4">
+							<div className="space-y-3 p-2 sm:p-4">
 								{columnTasks.map((task) => (
 									<TaskCard
 										key={task.id}

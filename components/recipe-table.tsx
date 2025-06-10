@@ -49,7 +49,7 @@ export function RecipeTable() {
 			</div>
 
 			{/* search */}
-			<div className="bg-white dark:bg-gray-800 rounded-lg border shadow-sm p-6">
+			<div className="bg-white dark:bg-gray-800 rounded-lg border shadow-sm p-2 sm:p-4 md:p-6">
 				<h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
 					<Search className="h-4 w-4" />
 					Search Recipes
@@ -79,14 +79,14 @@ export function RecipeTable() {
 
 			{/* Results */}
 			<div className="bg-white dark:bg-gray-800 rounded-lg border shadow-sm">
-				<div className="p-6 border-b border-gray-200 dark:border-gray-700">
-					<h2 className="text-lg font-semibold">
+				<div className=" p-2 sm:p-4 md:p-6 text-sm sm:text-base md:text-lg border-b border-gray-200 dark:border-gray-700">
+					<h2 className=" font-semibold">
 						{data?.meals
 							? `${data.meals.length} Recipes Found`
 							: "Recipes"}
 					</h2>
 				</div>
-				<div className="p-6">
+				<div className=" p-2 sm:p-4 md:p-6">
 					{isLoading ? (
 						<div className="flex items-center justify-center py-8">
 							<Loader2 className="h-8 w-8 animate-spin" />
@@ -111,11 +111,11 @@ export function RecipeTable() {
 									header: "Recipe",
 									key: "recipe",
 									render: (recipe: Recipe) => (
-										<div className="flex items-center gap-3">
+										<div className="flex items-center gap-2">
 											<img
 												src={recipe.strMealThumb}
 												alt={recipe.strMeal}
-												className="w-12 h-12 rounded-md object-cover"
+												className="w-6 h-6 rounded-md object-cover"
 											/>
 											<div>
 												<p className="font-medium">
@@ -133,7 +133,7 @@ export function RecipeTable() {
 											getIngredients(recipe);
 										return (
 											<div className="max-w-md">
-												<p className="text-sm text-muted-foreground line-clamp-2">
+												<p className="text-muted-foreground line-clamp-2">
 													{ingredients
 														.slice(0, 3)
 														.join(", ")}

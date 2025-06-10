@@ -117,13 +117,13 @@ export function TaskForm({
 					onClick={() => handleOpenChange(false)}
 					className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
 				>
-					<X className="h-4 w-4" />
+					<X className="h-4 w-4 sm:h-5 sm:w-5" />
 					<span className="sr-only">Close</span>
 				</button>
 
 				{/* Header */}
 				<div className="flex flex-col space-y-1.5 text-left p-6 pb-4">
-					<h2 className="text-lg font-semibold leading-none tracking-tight pr-8">
+					<h2 className="text-base sm:text-lg md:text-xl font-semibold leading-none tracking-tight pr-8">
 						{task ? "Edit Task" : "Create New Task"}
 					</h2>
 				</div>
@@ -136,7 +136,7 @@ export function TaskForm({
 					<div className="space-y-2">
 						<label
 							htmlFor="title"
-							className="text-sm font-medium leading-none"
+							className="text-xs sm:text-sm font-medium leading-none"
 						>
 							Title *
 						</label>
@@ -144,9 +144,10 @@ export function TaskForm({
 							id="title"
 							{...register("title")}
 							placeholder="Enter task title"
+							className="text-sm sm:text-base"
 						/>
 						{errors.title && (
-							<p className="text-sm text-destructive">
+							<p className="text-xs sm:text-sm text-destructive">
 								{errors.title.message}
 							</p>
 						)}
@@ -155,7 +156,7 @@ export function TaskForm({
 					<div className="space-y-2">
 						<label
 							htmlFor="description"
-							className="text-sm font-medium leading-none"
+							className="text-xs sm:text-sm font-medium leading-none"
 						>
 							Description
 						</label>
@@ -164,9 +165,10 @@ export function TaskForm({
 							{...register("description")}
 							placeholder="Enter task description (optional)"
 							rows={3}
+							className="text-sm sm:text-base"
 						/>
 						{errors.description && (
-							<p className="text-sm text-destructive">
+							<p className="text-xs sm:text-sm text-destructive">
 								{errors.description.message}
 							</p>
 						)}
@@ -174,7 +176,7 @@ export function TaskForm({
 
 					<div className="grid grid-cols-2 gap-4">
 						<div className="space-y-2">
-							<label className="text-sm font-medium leading-none">
+							<label className="text-xs sm:text-sm font-medium leading-none">
 								Status
 							</label>
 							<Select
@@ -183,21 +185,34 @@ export function TaskForm({
 									setValue("status", value as any)
 								}
 							>
-								<SelectTrigger>
+								<SelectTrigger className="text-sm sm:text-base">
 									<SelectValue placeholder="Select status" />
 								</SelectTrigger>
 								<SelectContent>
-									<SelectItem value="To Do">To Do</SelectItem>
-									<SelectItem value="In Progress">
+									<SelectItem
+										value="To Do"
+										className="text-sm sm:text-base"
+									>
+										To Do
+									</SelectItem>
+									<SelectItem
+										value="In Progress"
+										className="text-sm sm:text-base"
+									>
 										In Progress
 									</SelectItem>
-									<SelectItem value="Done">Done</SelectItem>
+									<SelectItem
+										value="Done"
+										className="text-sm sm:text-base"
+									>
+										Done
+									</SelectItem>
 								</SelectContent>
 							</Select>
 						</div>
 
 						<div className="space-y-2">
-							<label className="text-sm font-medium leading-none">
+							<label className="text-xs sm:text-sm font-medium leading-none">
 								Priority
 							</label>
 							<Select
@@ -206,15 +221,28 @@ export function TaskForm({
 									setValue("priority", value as any)
 								}
 							>
-								<SelectTrigger>
+								<SelectTrigger className="text-sm sm:text-base">
 									<SelectValue placeholder="Select priority" />
 								</SelectTrigger>
 								<SelectContent>
-									<SelectItem value="Low">Low</SelectItem>
-									<SelectItem value="Medium">
+									<SelectItem
+										value="Low"
+										className="text-sm sm:text-base"
+									>
+										Low
+									</SelectItem>
+									<SelectItem
+										value="Medium"
+										className="text-sm sm:text-base"
+									>
 										Medium
 									</SelectItem>
-									<SelectItem value="High">High</SelectItem>
+									<SelectItem
+										value="High"
+										className="text-sm sm:text-base"
+									>
+										High
+									</SelectItem>
 								</SelectContent>
 							</Select>
 						</div>
@@ -223,7 +251,7 @@ export function TaskForm({
 					<div className="space-y-2">
 						<label
 							htmlFor="assignee"
-							className="text-sm font-medium leading-none"
+							className="text-xs sm:text-sm font-medium leading-none"
 						>
 							Assignee
 						</label>
@@ -231,11 +259,12 @@ export function TaskForm({
 							id="assignee"
 							{...register("assignee")}
 							placeholder="Enter assignee name (optional)"
+							className="text-sm sm:text-base"
 						/>
 					</div>
 
 					<div className="space-y-2">
-						<label className="text-sm font-medium leading-none">
+						<label className="text-xs sm:text-sm font-medium leading-none">
 							Due Date
 						</label>
 						<div className="relative">
@@ -255,24 +284,26 @@ export function TaskForm({
 										: undefined;
 									setValue("dueDate", date);
 								}}
-								className="pr-10"
+								className="pr-10 text-sm sm:text-base"
 							/>
-							<CalendarIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+							<CalendarIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
 						</div>
 					</div>
 
 					{/* Footer */}
-					<div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 pt-4">
+					<div className="flex gap-y-2 flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 pt-4">
 						<Button
 							type="button"
 							variant="outline"
 							onClick={() => handleOpenChange(false)}
+							className="text-sm sm:text-base"
 						>
 							Cancel
 						</Button>
 						<Button
 							type="submit"
 							disabled={isSubmitting}
+							className="text-sm sm:text-base"
 						>
 							{isSubmitting
 								? "Saving..."
